@@ -21,7 +21,6 @@ hands = mp_hands.Hands(
 )
 mp_draw = mp.solutions.drawing_utils
 
-
 cap = cv.VideoCapture(0)
 
 while True:
@@ -31,7 +30,6 @@ while True:
     rgb =cv.cvtColor(frame,cv.COLOR_BGR2RGB)
 
     results = hands.process(rgb)
-
 
     #if hands detected
     if results.multi_hand_landmarks:
@@ -83,8 +81,6 @@ while True:
            prev_x=curr_x
            prev_y=curr_y
 
-        
-
           distance1 = math.hypot(x1-x3,y1-y3)
           if distance1 < 55:
              if not clicked:
@@ -101,4 +97,3 @@ while True:
 
 cap.release()
 cv.destroyAllWindows()
-           
